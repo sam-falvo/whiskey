@@ -57,6 +57,8 @@ Example configuration file:
   (defaults to `cwd/<process_name>.log`)
 * `wait_for` - Condition which must be met before the process is considered as
   started (defaults to `none`).
+* `kill_script` - path to the shell script which will be executed instead of
+  sending `SIGKILL` signal to the managed process when stopping it.
 * `timeout` - how long to wait for process to start (in ms) before erroring
    out (defaults to 10 seconds).
 * `depends` - Array of names of process dependencies. Name must match some other
@@ -101,7 +103,3 @@ Command line tool can be used for:
 ### Start some processes defined in the configuration file
 
 `whiskey-process-runner --configuration [file.json] --run --names process1,process2`
-
-### TODO
-
-* Command line option for interactively generating configuration file
